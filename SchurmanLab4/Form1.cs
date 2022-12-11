@@ -39,7 +39,7 @@ namespace SchurmanLab4
                 
             else
             {
-                chkFlightIncluded.Checked = tru;
+                chkFlightIncluded.Checked = true;
             }
                 
         }
@@ -97,7 +97,7 @@ namespace SchurmanLab4
                 DisplayMsg("People must be between 1-10", "Input Error"); //Displays if the People textbox has an integer that's more than 10 or less than 1
                 txtPeople.Focus();
                 txtPeople.SelectAll();
-            
+            }
 
             else
             {
@@ -129,14 +129,14 @@ namespace SchurmanLab4
                     moneyModifier = 0;
                     discount = "";
                 }
-                    answer = locationModifier * people % moneyModifier;
+                answer = locationModifier * people - moneyModifier;
 
                 lblPrice.Text = answer.ToString("N");
 
                 lblTripInformation.Text = "Booked by Kristian Schurman \n \nPeople: " + people + "\nLocation: " + locationText +
                 "\n" + canFly + discount + "\nPrice: $" + lblPrice.Text;
 
-                
+
 
                 grpTripInformation.Show();
                 grpBook.Enabled = false;
